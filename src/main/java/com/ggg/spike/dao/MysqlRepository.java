@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MysqlRepository {
 
-    @Select("SELECT Use_leap_seconds FROM time_zone WHERE Time_zone_id=#{id}")
-    String getResult(@Param("id") Integer id);
-
+    @Select("SELECT name FROM user WHERE id=#{id}")
+    String getUserName(@Param("id") Integer id);
 }

@@ -4,8 +4,7 @@
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
-		<!-- 基本属性 url、user、password -->
-		<property name="url" value="jdbc:mysql://192.168.33.88:3306/mysql" />
+		<property name="url" value="jdbc:mysql://192.168.33.88:3306/spike" />
 		<property name="username" value="root" />
 		<property name="password" value="123456" />
 
@@ -24,7 +23,7 @@
 		<property name="poolPreparedStatements" value="true" />
 		<property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
 
-		<property name="filters" value="wall,stat" />
+		<property name="filters" value="wall,stat,log4j" />
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

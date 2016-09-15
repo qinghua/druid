@@ -15,8 +15,7 @@ public class HelloController {
 
     @RequestMapping(value = "/hello")
     @ResponseBody
-    public String hello(String name) {
-        String result = repository.getResult(Integer.valueOf(name));
-        return "Hello " + result;
+    public String hello(Integer id) {
+        return "Hello " + repository.getUserName(id);
     }
 }
